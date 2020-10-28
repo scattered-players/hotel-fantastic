@@ -1,0 +1,46 @@
+.theprogram-component {
+  // max-width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    font-size: 72px;
+  }
+
+  .actor {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .headshot {
+    width: 45%;
+    max-width: 20vw;
+    margin: 10px;
+  }
+
+  .headshot img {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+  }
+
+  .info {
+    width: 45%;
+  }
+
+  a,
+  a:visited {
+    color: dodgerblue;
+  }
+
+  .insta-link {
+    display: flex;
+    align-items: center;
+    img {
+      width: 16px;
+    }
+  }
+}

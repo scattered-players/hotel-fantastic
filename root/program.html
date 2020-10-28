@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program</title>
+  <style>
+    html,
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    article {
+      max-width: 800px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+
+    .promo-section {
+      display: flex;
+
+    }
+
+    .promo {
+      max-width: 50%;
+      text-align: center;
+    }
+    .promo img {
+      max-width: 100%;
+    }
+
+    .actor {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .headshot {
+      width: 45%;
+      max-width: 30vw;
+      margin: 10px;
+    }
+
+    .headshot img {
+      width: 100%;
+      height: 100%;
+      margin: 10px;
+    }
+
+    .info {
+      width: 45%;
+    }
+
+    a,
+    a:visited {
+      color: dodgerblue;
+    }
+    .zoom-link {
+      text-align: center;
+      border: 2px dashed dodgerblue;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .zoom-link a {
+      font-size: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <h1>The End</h1>
+    <h2>Thank you for coming to Shattered Space!</h2>
+    <div class="zoom-link">
+      <a href="https://us04web.zoom.us/j/3175931982?pwd=ZEdaTXJPUG0zVXR0RTY3Q0JCQmVLdz09" target="_blank">Click here to join the post-show Zoom Hangout!</a>
+      <p>(Actors and production crew are preparing for the next show and will not be able to join)</p>
+    </div>
+    <section class="promo-section">
+      <div class="promo">
+        <a href="https://mirrors-space.myshopify.com" target="_blank">
+          <img src="//cdn.shopify.com/s/files/1/0401/2657/8839/products/mockup-45abf1a9_420x.jpg?v=1591395293">
+          <div>Buy some Shattered Space Merch!</div>
+        </a>
+      </div>
+      <div class="promo">
+        <a href="https://patrickmcminnsounddesign.bandcamp.com/album/mirrors-space" target="_blank">
+          <img src="https://f4.bcbits.com/img/a2462707017_16.jpg">
+          <div>Get the Original Soundtrack by Patrick McMinn!</div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Our Artists</h2>
+      <hr />
+      <div className="actor">
+        <div className="headshot">
+          <img src="https://i1.wp.com/decider.com/wp-content/uploads/2019/05/one-punch-man-season-2-episode-6.jpg" />
+        </div>
+        <div className="info">
+          <h3>
+            Your Name Here
+          </h3>
+          <h4>
+            Director
+          </h4>
+          <p><a className="insta-link" href="https://www.instagram.com/"><img src="/media/icons/instagram-logo.png" alt="Instagram Logo" /></a></p>
+          <p>
+            You can do it!
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</body>
+
+</html>

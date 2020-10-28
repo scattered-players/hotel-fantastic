@@ -1,0 +1,27 @@
+{
+  "name": "@scatteredplayers/promenade-starter",
+  "version": "1.0.0",
+  "description": "A template Promenade show",
+  "main": "index.js",
+  "author": "Chris Uehlinger <chris.uehlinger@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "promenade --env dev",
+    "serve:ssl": "USE_SSL=true promenade --env dev",
+    "dist": "promenade --env dist"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
+    "@scatteredplayers/promenade": "1.0.0-alpha.2",
+    "@tensorflow-models/body-pix": "^2.0.5",
+    "@tensorflow-models/facemesh": "0.0.1",
+    "@tensorflow/tfjs-converter": "^1.7.2",
+    "@tensorflow/tfjs-core": "^1.7.2",
+    "@uehreka/seriously": "^1.0.1",
+    "hull.js": "^1.0.0",
+    "seedrandom": "^3.0.5",
+    "three": "~0.115.0"
+  }
+}

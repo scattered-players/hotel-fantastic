@@ -1,0 +1,7 @@
+dist
+root/media/3d
+root/media/audio
+root/media/video
+root/headshots
+certs
+node_modules

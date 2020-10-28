@@ -1,0 +1,12 @@
+# Promenade Front-end starter
+
+If you want to run a piece of online interactive immersive theatre, you've come to the right place. If you have no idea what I'm talking about, go [here](https://github.com/scatteredplayers/promenade-devops), then come back.
+
+This repo uses the `@scatteredplayers/promenade` npm package to set up and build a front end for your show. So how do you do it? Like this:
+
+1. Run `npm install` to get the `@scatteredplayers/promenade` package. Most of the app will work for any show, but there are "hooks" (*not* in the [React sense](https://reactjs.org/docs/hooks-intro.html)) that allow you to inject custom code and configuration into parts that you might want to be different. In the `custom` folder, you are basically supplying a theme/plugin that is used by the main app to customize the experience.
+2. The most important file in here is `custom/config.json`. If you leave that alone you'll RickRoll your audience when they go to watch the intro video. So fill it out with the relevant URLs and metadata.
+3. The `NavigationPlugin` is a React component that will show up as the navigation screen when your attendees are figuring out where to go next. You'll be passed a canvas to which you can render, and a bunch of events when users select different destinations. If you're going to try rendering 3D stuff to the canvas, I recommend using the OffscreenCanvas polyfills we built in [Shattered Space](https://github.com/scatteredplayers/shattered-space) so that your graphics don't detract from the overall UX and framerate when people try to attend your show on an old laptop.
+4. If you put anything in the `./root` directory, it'll be synced to the root of your site. `./root/media` is gitignored but is deployed like everything else, so this is a good place to put large media files or 3D models/textures (especially if you bought them but don't have public distribution rights).
+
+To develop locally, make sure you have a Janus server deployed (see [here](https://github.com/scatteredplayers/promenade-devops)) and then run `npm start`. When you want to deploy, make sure your AWS credentials are ready, then run `npm run dist` and then `aws s3 sync ./dist s3://YOUR.DOMAIN` to upload everything. If you're changeing media files, make sure to log into Cloudflare and Purge Everything.

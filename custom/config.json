@@ -1,0 +1,27 @@
+{
+  "SHOW_TITLE": "Promenade Test App",
+  "COMPANY_EMAIL": "YOUR.COMPANY.EMAIL.HERE@gmail.com",
+  "DOMAIN": "scatteredtest.online",
+  "USER_AVATAR": null,
+  "INTRO_VIDEO": "/media/video/intro-v4.mp4",
+  "ENDING_VIDEO_CHOICES": [
+    "/media/video/seal-the-tiger.mp4"
+  ],
+  "NAV_OVERLAY_VIDEO": null,
+  "NAV_ARRIVAL_SOUND": null,
+  "NAV_DEPARTURE_SOUND": null,
+  "NAV_BACKGROUND_MUSIC": "/media/audio/03_The_Hall_of_Refractions.mp3",
+  "TRANSIT_TEXT": "On Our Way!",
+  "MUI_THEME": "light",
+  "JANUS_MODE": "MULTIPLE",
+  "CUE_LIST": [
+    {
+      "id": "INTRO_ALERT",
+      "audioPath": "/media/audio/IntroAlert.mp3"
+    },
+    {
+      "id": "ENDING_ALERT",
+      "audioPath": "/media/audio/EndingAlert.mp3"
+    }
+  ]
+}
