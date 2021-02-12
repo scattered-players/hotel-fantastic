@@ -1,9 +1,9 @@
 #!/bin/bash -ex
 
-yarn run dist 
+# yarn run dist 
 cp -R root/* dist/
 # cp root/program.html dist/program.html
 
-aws s3 sync ./dist s3://scatteredtest.online
+aws s3 sync ./dist s3://hotelfantastic.live
 
 echo 'DONE!'

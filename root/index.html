@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Hotel Fantastic!</title>
+    <link rel="icon" href="/media/favicon-32.png"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Welcome to the Hotel Fantastic!">
+    <meta name="twitter:title" content="Welcome to the Hotel Fantastic!">
+  
+    <meta name="description" content="An immersive, musical sojourn through loss, legacy and desire.">
+    <meta property="og:description" content="An immersive, musical sojourn through loss, legacy and desire.">
+    <meta name="twitter:description" content="An immersive, musical sojourn through loss, legacy and desire.">
+  
+    <meta property="og:image" content="https://hotelfantastic.live/media/social-card-small.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="The Scattered Players">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Parisienne', cursive;
+            text-align: center;
+            font-size: 48px;
+            margin: 5px;
+        }
+
+        h1 a {
+            color: #111;
+            text-decoration: none;
+        }
+
+        h1 a:hover {
+            text-decoration: underline;
+        }
+        p.blurb {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin: 5px auto;
+            max-width: 600px;
+        }
+        h2.subtitle {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h3, p.dates {
+            text-align: center;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        p.instructions {
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .embed-container {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .embed-container iframe {
+            max-width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px auto;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .screen-reader-only {
+            font-size: 0;
+            margin: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            h1 {
+                font-size: 72px;
+            }
+            .mobile-or-screen-reader-only {
+                font-size: 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1><a href="#eventbrite-widget-container">Buy Tickets Now!</a></h1>
+    <h2 class="screen-reader-only">Welcome to the Hotel Fantastic!</h2>
+    <img src="media/HFposter_0205.jpg" alt="Hotel Fantastic Poster" />
+    <h3 class="mobile-or-screen-reader-only">Directed by Megan Livingston and Ben Abraham</h3>
+    <p class="dates mobile-or-screen-reader-only">March 26th through April 17th</p>
+    <p class="blurb">Immerse yourself in the new, virtual wonderland brought to you by The Scattered Players. Welcome to the Hotel Fantastic, a haven of haunts existing somewhere between tomorrow and yesterday. The Hotel ignites the fire of creativity in artists to whom time is determined to misremember. Meet the staff, interact with guests and witness breathtaking performances all from the comfort of your own space. Welcome to the Hotel Fantastic! An immersive, musical sojourn through loss, legacy and desire.</p>
+    <h2 class="subtitle">How does this show work?</h2>
+    <p class="instructions">(Click play!)</p>
+    <div class="embed-container">
+      <iframe width="1920" height="1080" src="https://www.youtube.com/embed/5Pt0es0E3Fc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h2 class="subtitle">Get Your Tickets Now!</h2>
+    <div id="eventbrite-widget-container"></div>
+    <footer>
+        <a href="/">Tickets</a> - <a href="/tos.html">Terms of Service</a> - <a href="/privacy.html">Privacy Policy</a>
+        <div>Produced by <a href="https://thescatteredplayers.com">The Scattered Players</a></div>
+    </footer>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4F0BDHQNPZ"></script>
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+    <script>
+        if (location.hostname !== 'localhost') {
+            if (location.protocol === 'http:') {
+                location.href = `https://${location.host}${location.pathname}${location.search}`;
+            }
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-4F0BDHQNPZ');
+        }
+
+        var exampleCallback = function () {
+            console.log("Order complete!");
+            gtag('event', 'order');
+        };
+
+        window.EBWidgets.createWidget({
+            widgetType: "checkout",
+            eventId: "137514007097",
+            iframeContainerId: "eventbrite-widget-container",
+            iframeContainerHeight: window.innerWidth > 768 ? window.innerHeight * 0.9 : window.innerHeight,
+            // iFrameAutoAdapt: 90,
+            onOrderComplete: exampleCallback
+        });
+    </script>
+
+</body>
+
+</html>

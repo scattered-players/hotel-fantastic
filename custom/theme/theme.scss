@@ -55,3 +55,11 @@ body {
     background-position-x: 100px;
   }
 }
+
+.interactionscreen-component .video-visible {
+  object-fit: cover;
+  mask: url(/media/video-filter.svg);
+  mask-size: 100% 100%;
+  mask-type: luminance; /* white = transparent, grays = semi-transparent, black = opaque */
+  mask-type: alpha; /* transparent areas of the image let image through, otherwise not */
+}
