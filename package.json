@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node --max-old-space-size=8192 node_modules/.bin/promenade --env dev",
-    "serve:ssl": "USE_SSL=true promenade --env dev",
-    "dist": "promenade --env dist"
+    "start": "node --max-old-space-size=8192 node_modules/.bin/promenade --env dev --workers nav-1886-worker nav-1928-worker",
+    "serve:ssl": "USE_SSL=true promenade --env dev --workers nav-1886-worker nav-1928-worker",
+    "dist": "promenade --env dist --workers nav-1886-worker nav-1928-worker"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.8",
@@ -22,6 +22,6 @@
     "@uehreka/seriously": "^1.0.1",
     "hull.js": "^1.0.0",
     "seedrandom": "^3.0.5",
-    "three": "~0.115.0"
+    "three": "~0.125.0"
   }
 }
