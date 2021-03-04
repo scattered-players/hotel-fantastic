@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="circle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous"></script>   
+</head>
+
+<body>
+<div class="lesson-indication-wrapper transform" id="button">
+    <span class="material-icons">
+        announcement
+        </span>
+    <span class="lesson-message">
+        
+        <ul class="lesson-message-list">
+            <li> Changes suggested by your teacher <br/>
+                <a href="#">View change</a>
+            </li>
+            <!-- <li>
+                This is a 3-day lesson. Make sure to take your time and divide it up accordingly.
+            </li> -->
+        </ul>
+    </span>
+    <div class="close">
+        <span class="material-icons">
+        close
+        </span>
+        <span class="close-text">
+            close
+        </span>
+    </div>
+</div>
+
+<script>
+    $("#button").click(function() {
+    $('.transform').toggleClass('transform-inactive');
+  });
+</script>
+
+</body>
+
+</html>

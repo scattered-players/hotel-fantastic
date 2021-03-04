@@ -1,0 +1,95 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/************REMOVE ABOVE***********/
+
+
+.transform { 
+    transition: all 1s ease;
+  }
+.lesson-indication-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #007FA3a8;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    position: fixed;
+    right: 20%;
+    top: -100px;
+    margin: 0;
+  }
+  .lesson-indication-wrapper:hover {
+      background-color: #218d9b;
+  }
+  .lesson-indication-wrapper .material-icons {
+      text-align: center;
+      color: #ffffff;
+      font-size: 30px;
+  }
+  .lesson-message {
+    align-self: center;
+    max-width: 375px;
+    color: #fff;
+    line-height: 150%;
+    font-size: 20px;
+  }
+  .lesson-message a{
+      color: #fff;
+      padding: 1px 10px 5px;
+      margin-left: -10px;
+      background-color: transparent;
+      border-radius: 3px;
+      border: 1px solid transparent;
+      margin-top: 15px;
+  }
+  .lesson-message a:hover {
+    background-color: #0e6f7b;
+    border-color: #0e6f7b;
+  }
+  .lesson-message-list {
+      padding-left: 0;
+  }
+  .lesson-message-list li {
+    list-style: none;
+    padding-bottom: 20px;
+  }
+  .transform-inactive {
+      width: 50px;
+      height: 50px;
+      margin: 225;
+      cursor: pointer;
+      justify-content: center;
+  }
+  .transform-inactive .lesson-message {
+    color: transparent;
+    font-size: 0px;
+  }
+  .transform-inactive .lesson-message a {
+    color: transparent;
+    font-size: 3px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+  .transform-inactive .lesson-message {
+      margin-bottom: -35px;
+  }
+  .transform-inactive .close {
+      display: none;
+  }
+  .transform-inactive span.material-icons {
+    margin-top: -10px;
+}
+.close {
+    align-self: center;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    padding-bottom: 15px;
+}
+.close:hover {
+    cursor: pointer;
+}

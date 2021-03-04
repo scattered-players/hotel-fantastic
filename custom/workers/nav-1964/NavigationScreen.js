@@ -3,6 +3,9 @@ import TextureLoader from '../TextureLoader';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
 
+import vertexShader from '../../glsl/vertex.glsl';
+import burnThroughShader from '../../glsl/burn-through.glsl';
+
 THREE.Cache.enabled = true;
 export default class NavigationScreen {
   constructor(sendToMainThread) {
@@ -19,7 +22,7 @@ export default class NavigationScreen {
     this.disposables = [];
 
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xffff00);
+    this.scene.background = new THREE.Color(0xff00ff);
     this.disposables.push(this.scene);
 
     let startTime = Date.now();
@@ -27,7 +30,7 @@ export default class NavigationScreen {
     // this.loadingManager.addHandler( /\.tga$/i, new TGALoader(this.loadingManager) );
     this.loadingManager.onLoad = () => {
       setTimeout(() => {
-        console.log('LOADED!', (Date.now()-startTime)/1000, this.hasReceivedFirstUpdate );
+        console.log('1964LOADED!', (Date.now()-startTime)/1000, this.hasReceivedFirstUpdate );
         this.hasReceivedFirstLoad = true;
         if(this.hasReceivedFirstUpdate) {
           this.updateScene(JSON.parse(JSON.stringify(this.state)));
@@ -35,11 +38,23 @@ export default class NavigationScreen {
       }, 1000);
     };
 
-    this.hotelTexture = new TextureLoader(this.loadingManager).load('/media/thf-1886.png');
-    this.disposables.push(this.hotelTexture);
+    this.hotel1928Texture = new TextureLoader(this.loadingManager).load('/media/thf-1928.png');
+    this.disposables.push(this.hotel1928Texture);
+    this.hotel1964Texture = new TextureLoader(this.loadingManager).load('/media/thf-1964.png');
+    this.disposables.push(this.hotel1964Texture);
     this.geometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
     this.disposables.push(this.geometry);
-    this.material = new THREE.MeshBasicMaterial( {map: this.hotelTexture, side: THREE.DoubleSide} );
+    this.timeUniform = { value: 0 };
+    this.material = new THREE.ShaderMaterial({
+      uniforms: {
+        time: this.timeUniform,
+        tex1: { type:'t', value: this.hotel1928Texture },
+        tex2: { type:'t', value: this.hotel1964Texture },
+      },
+      vertexShader: vertexShader,
+      fragmentShader: burnThroughShader,
+      side: THREE.DoubleSide
+    });
     this.disposables.push(this.material);
     this.plane = new THREE.Mesh( this.geometry, this.material );
     this.scene.add( this.plane );
@@ -156,6 +171,7 @@ export default class NavigationScreen {
     let timeDelta = this.clock.getDelta();
     let timeElapsed = this.clock.getElapsedTime();
     // console.log('RENDER?', !!this.state, !!this.hasReceivedFirstLoad, !!this.renderer)
+    this.timeUniform.value = timeElapsed;
 
     if(!this.state || !this.hasReceivedFirstLoad || !this.renderer) {
       return;

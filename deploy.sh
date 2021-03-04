@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-# yarn run dist 
+yarn run dist 
 cp -R root/* dist/
 # cp root/program.html dist/program.html
 

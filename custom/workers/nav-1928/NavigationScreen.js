@@ -61,6 +61,8 @@ export default class NavigationScreen {
 
     this.camera = new THREE.PerspectiveCamera( 75, 4/3, 0.001, 1000 );
     this.camera.position.z = 10;
+    // this.camera.fov = 15;
+    // this.camera.updateProjectionMatrix();
 
     this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
     this.scene.add(this.ambientLight);
@@ -104,7 +106,12 @@ export default class NavigationScreen {
   destroyRenderer() {
     cancelAnimationFrame(this.rAF);
     if(this.renderer){
-      this.renderer.dispose();
+      try {
+        this.renderer.dispose();
+      } catch(e){
+        console.error('DISPOSAL ERROR (that we caught, so it shouldnt affect anything else)');
+        console.error(e);
+      }
     }
     this.canvas = null;
     this.width = null;
@@ -224,7 +231,7 @@ export default class NavigationScreen {
       try {
         asset.dispose();
       } catch (e){
-        console.error('DISPOSAL ERROR', asset);
+        console.error('DISPOSAL ERROR (that we caught, so it shouldnt affect anything else)', asset);
         console.error(e);
       }
     });

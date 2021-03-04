@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Gruppo&family=Raleway&display=swap');
 body {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
   min-height: 100vh;
+  color: white;
+  background-image: url('/media/backgrounds/Polish_1.jpg');
 }
 
 .feed-stats {
   color: white;
+}
+.partysidebar-component {
+  // background-image: url('/media/backgrounds/Polish_3.jpg');
 }
 
 .nav-item {
@@ -37,13 +42,13 @@ body {
 }
 
 .transit-marker {
+  font-family: 'Gruppo', cursive;
   color: transparent;
   background: repeating-linear-gradient(to right, silver 0px, gray 10px, gray 11px, silver 20px);
   background-clip: text;
   -webkit-background-clip: text;
   animation: portal-flash linear 2.5s infinite;
   text-shadow: 0px 0px 5px gray;
-  font-weight: 700;
 }
 
 @keyframes portal-flash {
@@ -62,4 +67,78 @@ body {
   mask-size: 100% 100%;
   mask-type: luminance; /* white = transparent, grays = semi-transparent, black = opaque */
   mask-type: alpha; /* transparent areas of the image let image through, otherwise not */
+}
+
+.video-row {
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:2;
+  }
+  .video-visible {
+  }
+}
+
+.start-phase, .freeplay-2-phase {
+  .video-row {
+    .video-overlay {
+      background: radial-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 75%);
+      animation: flicker 1s linear infinite;
+    }
+    .video-visible {
+      filter:sepia(1);
+    }
+  }
+}
+
+.freeplay-1-phase {
+  .video-row {
+    .video-overlay {
+      background: transparent;
+    }
+    .video-visible {
+      filter:grayscale(1);
+    }
+  }
+}
+
+@keyframes flicker {
+  30%, 50%, 90% {
+    opacity: 0.3;
+  }
+  
+  10%, 70% {
+    opacity: 0.4;
+  }
+
+  0%, 20%, 40%, 60%, 80%, 100% {
+    opacity: 0.1;
+  }
+}
+
+.freeplay-3-phase {
+  .video-row {
+    .video-overlay {
+      background: transparent;
+    }
+    .video-visible {
+      filter:saturate(1) url(/media/tv-filter.svg#displacementFilter);;
+    }
+  }
+}
+
+#app, body {
+  .MuiTypography-body1, .MuiTypography-body2, .MuiTab-root, .MuiButton-root, .MuiInputBase-input, .MuiFormLabel-root {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    // font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', Times, serif;
+  }
+  .MuiTypography-h3, .MuiTypography-h4, .MuiTypography-h5, .MuiTypography-h6 {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    backdrop-filter: blur(10px);
+    // font-family: 'Goudy Bookletter 1911', Georgia, 'Times New Roman', Times, serif;
+  }
 }
