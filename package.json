@@ -14,7 +14,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.8",
     "@material-ui/icons": "^4.9.1",
-    "@scatteredplayers/promenade": "1.1.0-alpha.6",
+    "@scatteredplayers/promenade": "2.0.0-alpha.3",
     "@tensorflow-models/body-pix": "^2.0.5",
     "@tensorflow-models/facemesh": "0.0.1",
     "@tensorflow/tfjs-converter": "^1.7.2",
